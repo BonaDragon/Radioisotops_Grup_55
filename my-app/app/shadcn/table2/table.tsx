@@ -8,49 +8,31 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
-const invoices = [
+const alerts = [
   {
-    invoice: "INV001",
-    paymentStatus: "Paid",
-    totalAmount: "$250.00",
-    paymentMethod: "Credit Card",
+    smartId: "INV001",
+    type: "Pulsaciones",
+    paciente: "Maria Isabel",
+    hour: "16:00h",
+    date: "26/02/2026",
+    description: "High PPM",
+  },
+ {
+    smartId: "INV001",
+    type: "Pulsaciones",
+    paciente: "Maria Isabel",
+    hour: "16:00h",
+    date: "26/02/2026",
+    description: "High PPM",
   },
   {
-    invoice: "INV002",
-    paymentStatus: "Pending",
-    totalAmount: "$150.00",
-    paymentMethod: "PayPal",
-  },
-  {
-    invoice: "INV003",
-    paymentStatus: "Unpaid",
-    totalAmount: "$350.00",
-    paymentMethod: "Bank Transfer",
-  },
-  {
-    invoice: "INV004",
-    paymentStatus: "Paid",
-    totalAmount: "$450.00",
-    paymentMethod: "Credit Card",
-  },
-  {
-    invoice: "INV005",
-    paymentStatus: "Paid",
-    totalAmount: "$550.00",
-    paymentMethod: "PayPal",
-  },
-  {
-    invoice: "INV006",
-    paymentStatus: "Pending",
-    totalAmount: "$200.00",
-    paymentMethod: "Bank Transfer",
-  },
-  {
-    invoice: "INV007",
-    paymentStatus: "Unpaid",
-    totalAmount: "$300.00",
-    paymentMethod: "Credit Card",
-  },
+    smartId: "INV001",
+    type: "Pulsaciones",
+    paciente: "Maria Isabel",
+    hour: "16:00h",
+    date: "26/02/2026",
+    description: "High PPM",
+  }, 
 ]
 
 export function TableFooterExample() {
@@ -59,21 +41,23 @@ export function TableFooterExample() {
       <TableCaption>A list of your recent alerts.</TableCaption>
       <TableHeader>
         <TableRow className=" bg-blue-300">
-          <TableHead className="w-[100px]">Alert</TableHead>
+          <TableHead>SmartWatch</TableHead>
           <TableHead>Tipo</TableHead>
           <TableHead>Paciente</TableHead>
           <TableHead>Hora</TableHead>
            <TableHead>Fecha</TableHead>
+            <TableHead>Descripción</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        {invoices.slice(0, 5).map((invoice) => (
-          <TableRow key={invoice.invoice}>
-            <TableCell className="font-medium">{invoice.invoice}</TableCell>
-            <TableCell>{invoice.paymentStatus}</TableCell>
-            <TableCell>{invoice.paymentMethod}</TableCell>
-            <TableCell >{invoice.totalAmount}</TableCell>
-             <TableCell >25/02/2026</TableCell>
+        {alerts.slice(0, 3).map((alert) => (
+          <TableRow key={alert.smartId}>
+            <TableCell className="font-medium">{alert.smartId}</TableCell>
+            <TableCell >{alert.type}</TableCell>
+            <TableCell>{alert.paciente}</TableCell>
+            <TableCell>{alert.hour}</TableCell>
+            <TableCell >{alert.date}</TableCell>
+             <TableCell >{alert.description}</TableCell>
           </TableRow>
         ))}
       </TableBody>
