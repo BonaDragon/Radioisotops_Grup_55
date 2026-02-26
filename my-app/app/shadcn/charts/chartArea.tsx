@@ -1,6 +1,6 @@
 "use client"
 
-import { TrendingUp } from "lucide-react"
+import { TrendingDown, TrendingUp } from "lucide-react"
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts"
 
 import {
@@ -21,12 +21,12 @@ import {
 export const description = "A simple area chart"
 
 const chartData = [
-  { month: "January", desktop: 186 },
+  { month: "January", desktop: 305 },
   { month: "February", desktop: 305 },
   { month: "March", desktop: 237 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 209 },
-  { month: "June", desktop: 214 },
+  { month: "April", desktop:200 },
+  { month: "May", desktop: 150 },
+  { month: "June", desktop: 100 },
 ]
 
 const chartConfig = {
@@ -40,9 +40,9 @@ export function ChartAreaDefault() {
   return (
     <Card className="border-0">
       <CardHeader>
-        <CardTitle>Area Chart</CardTitle>
+        <CardTitle>Radioisotops</CardTitle>
         <CardDescription>
-          Showing total visitors for the last 6 months
+          Muestra de liberación de radiación del cliente.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -81,7 +81,7 @@ export function ChartAreaDefault() {
         <div className="flex w-full items-start gap-2 text-sm">
           <div className="grid gap-2">
             <div className="flex items-center gap-2 leading-none font-medium">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+              Faltan x dias del tratamiento <TrendingDown className="h-4 w-4" />
             </div>
             <div className="text-muted-foreground flex items-center gap-2 leading-none">
               January - June 2024

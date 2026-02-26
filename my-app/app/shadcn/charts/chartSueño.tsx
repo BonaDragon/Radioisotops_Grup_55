@@ -18,21 +18,22 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart"
 
-export const description = "A bar chart"
+export const description = "Sueño"
 
 const chartData = [
-  { month: "January", desktop: 186 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 209 },
-  { month: "June", desktop: 214 },
+  { day: "Lunes", horas: 6 },
+  { day: "Martes", horas: 7 },
+  { day: "Miercoles", horas: 5 },
+  { day: "Jueves", horas: 3 },
+  { day: "Viernes", horas: 5 },
+  { day: "Sabado", horas: 8 },
+   { day: "Domingo", horas: 10 },
 ]
 
 const chartConfig = {
   desktop: {
     label: "Desktop",
-    color: "var(--chart-1)",
+    color: "purple",
   },
 } satisfies ChartConfig
 
@@ -40,15 +41,15 @@ export function DreamChart() {
   return (
     <Card className="border-0">
       <CardHeader>
-        <CardTitle>Bar Chart</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardTitle>Sueño</CardTitle>
+        <CardDescription>Esta semana</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>
           <BarChart accessibilityLayer data={chartData}>
             <CartesianGrid vertical={false} />
             <XAxis
-              dataKey="month"
+              dataKey="day"
               tickLine={false}
               tickMargin={10}
               axisLine={false}
@@ -58,7 +59,7 @@ export function DreamChart() {
               cursor={false}
               content={<ChartTooltipContent hideLabel />}
             />
-            <Bar dataKey="desktop" fill="var(--color-desktop)" radius={8} />
+            <Bar dataKey="horas" fill="var(--color-desktop)" radius={8} />
           </BarChart>
         </ChartContainer>
       </CardContent>
